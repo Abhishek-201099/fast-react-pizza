@@ -62,3 +62,11 @@ export function getTotalCartPrice(state) {
     0,
   );
 }
+
+export function getCartItemQuantityById(id) {
+  return function (state) {
+    return (
+      state.cart.cart.find((cartItem) => cartItem.pizzaId === id)?.quantity ?? 0
+    );
+  };
+}
