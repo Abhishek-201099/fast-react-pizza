@@ -9,6 +9,7 @@ import CreateOrder, {
 } from "./features/order/CreateOrder";
 import Order, { loader as orderLoader } from "./features/order/Order";
 import AppLayout from "./ui/AppLayout";
+import { action as updateOrderAction } from "./features/order/UpdateOrder";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,8 @@ const router = createBrowserRouter([
         path: "/order/:orderId",
         element: <Order />,
         loader: orderLoader,
+        // This updateOrderAction action is for updating the priority state of the order.
+        action: updateOrderAction,
         // We specified the errorElement here as well so that it won't render the whole page with <Error/> instead inside the <Applayout/>
         errorElement: <Error />,
       },
