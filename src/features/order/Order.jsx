@@ -12,7 +12,6 @@ import { useEffect } from "react";
 import UpdateOrder from "./UpdateOrder";
 
 function Order() {
-  // Using the useLoaderData() to get the specific order data sent by the loader()
   const order = useLoaderData();
 
   const fetcher = useFetcher();
@@ -24,7 +23,6 @@ function Order() {
     [fetcher],
   );
 
-  // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
   const {
     id,
     status,
@@ -96,7 +94,7 @@ function Order() {
   );
 }
 
-// The loader will receive the params object which will contain the parameters passed in the url of this route i.e /order/:orderId
+// eslint-disable-next-line react-refresh/only-export-components
 export async function loader({ params }) {
   const order = await getOrder(params.orderId);
   return order;

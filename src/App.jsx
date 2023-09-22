@@ -13,7 +13,6 @@ import { action as updateOrderAction } from "./features/order/UpdateOrder";
 
 const router = createBrowserRouter([
   {
-    // This is a layout route as we haven't specified a path for this.
     element: <AppLayout />,
     errorElement: <Error />,
     children: [
@@ -25,7 +24,6 @@ const router = createBrowserRouter([
         path: "/menu",
         element: <Menu />,
         loader: menuloader,
-        // We specified the errorElement here as well so that it won't render the whole page with <Error/> instead inside the <Applayout/>
         errorElement: <Error />,
       },
       {
@@ -41,9 +39,7 @@ const router = createBrowserRouter([
         path: "/order/:orderId",
         element: <Order />,
         loader: orderLoader,
-        // This updateOrderAction action is for updating the priority state of the order.
         action: updateOrderAction,
-        // We specified the errorElement here as well so that it won't render the whole page with <Error/> instead inside the <Applayout/>
         errorElement: <Error />,
       },
     ],

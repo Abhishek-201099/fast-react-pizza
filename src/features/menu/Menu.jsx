@@ -15,6 +15,7 @@ function Menu() {
 }
 
 // By convention we should write the loader function in the related component.
+// eslint-disable-next-line react-refresh/only-export-components
 export async function loader() {
   const menu = await getMenu();
   return menu;
