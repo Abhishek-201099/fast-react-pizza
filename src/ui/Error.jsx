@@ -2,7 +2,7 @@ import { useRouteError } from "react-router-dom";
 import LinkButton from "./LinkButton";
 
 function Error() {
-  // This will intercept any error form the component or loader/actions.
+  // This will intercept any error from the component or loader/actions.
   const error = useRouteError();
   return (
     <div>
